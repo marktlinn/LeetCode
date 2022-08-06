@@ -2,7 +2,7 @@
 that will add up to the target value. There will always be two numbers which make the sum.
 This could be achieved with two loops, but it'll be less efficient.
 It's better to use HashMaps, which are similar to keys and allow for rapid access and reference when checking data.
-We instantiate a ahshMap variable. Then create a regular for...loop
+We instantiate a hashMap variable. Then create a regular for...loop
 We want to loop through each individual number in the array and check if there is a number currently held in the hashMap that can be used to make the sum of the target value.
 The easiest way to do this is decalre a remainder variable that = ourTarget - OurCurrentNumber
 this way the remainderis= exactly the number we require to make our target value.
