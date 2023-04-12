@@ -30,28 +30,40 @@ otherwise initialise an array to hold a fibSequence with the initial value of [0
 return the sum of last two elements of the array;
 */
 
-const fib = function (n) {
+// const fib = function (n) {
+//   if (n === 0) return 0;
+//   if (n === 1) return 1;
+//   let fibSequence = [0];
+//   while (fibSequence.length < n) {
+//     if (fibSequence.length === 1) {
+//       fibSequence.push(1);
+//     } else {
+//       const twoNums = fibSequence.slice(fibSequence.length - 2);
+//       fibSequence.push(twoNums[0] + twoNums[1]);
+//     }
+//   }
+//   return fibSequence
+//     .slice(fibSequence.length - 2)
+//     .reduce((ttl, curr) => ttl + curr);
+// };
+
+/*
+Second Approach => using Dynamic Programming:
+
+if n is zero return 0;
+else initialise an array with the first two elements being the first two numbers in the Fibonacci sequence
+
+start aloop from the 2nd index and from that poin push to the array the sum of the previous two elements in the array.
+Return the final element of the array / or more simply array[n-1];
+*/
+const fib = n => {
   if (n === 0) return 0;
-  if (n === 1) return 1;
-  let fibSequence = [0];
-  while (fibSequence.length < n) {
-    if (fibSequence.length === 1) {
-      fibSequence.push(1);
-    } else {
-      const twoNums = fibSequence.slice(fibSequence.length - 2);
-      fibSequence.push(twoNums[0] + twoNums[1]);
-    }
+
+  const seq = [1, 1];
+  for (let i = 2; i < n; i++) {
+    seq.push(seq[i - 1] + seq[i - 2]);
   }
-  return fibSequence
-    .slice(fibSequence.length - 2)
-    .reduce((ttl, curr) => ttl + curr);
+  return seq[n - 1];
 };
 
-console.log(fib(0)); // 0
-console.log(fib(1)); // 1
-console.log(fib(2)); // 1
-console.log(fib(3)); // 2
-console.log(fib(4)); // 3
-console.log(fib(5)); // 5
-console.log(fib(6)); // 8
-console.log(fib(7)); // 13
+module.exports = fib;
