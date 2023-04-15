@@ -59,9 +59,4 @@ const addBinary = (a, b) => {
   return result.join("");
 };
 
-console.log(addBinary("11", "1")); // 100
-// console.log(addBinary("1010", "1011")); //("10101");
-// console.log(addBinary("0", "0")); //("10101");
-console.log(addBinary("1111", "1111")); //("11110");
-
 module.exports = addBinary;
