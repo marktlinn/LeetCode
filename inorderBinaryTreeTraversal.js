@@ -34,7 +34,7 @@ return result.
 
 */
 
-var inorderTraversal = function (root) {
+const inorderTraversal = root => {
   if (!root) return [];
 
   const stack = [];
@@ -53,3 +53,39 @@ var inorderTraversal = function (root) {
   }
   return result;
 };
+
+//Recursive solution with inline function
+// const inorderTraversal = root => {
+//   if (!root) return [];
+
+//   const result = [];
+
+//   const traversal = node => {
+//     if (!node) return;
+
+//     traversal(node.left);
+//     result.push(node.val);
+//     traversal(node.right);
+//   };
+
+//   traversal(root);
+//   return result;
+// };
+
+//Recursive solution with external auxiliary function
+// const traversal = (node, result = []) => {
+//   if (!node) return;
+
+//   traversal(node.left, result);
+//   result.push(node.val);
+//   traversal(node.right, result);
+// };
+
+// const inorderTraversal = root => {
+//   if (!root) return [];
+
+//   const result = [];
+
+//   traversal(root, result);
+//   return result;
+// };
