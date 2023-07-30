@@ -17,7 +17,7 @@ Constraints:
   s consist of printable ASCII characters.
 */
 
-import java.util.ArrayList;
+// import java.util.ArrayList;
 
 class ReverseVowelsInString {
   //First solution
@@ -95,7 +95,6 @@ class ReverseVowelsInString {
     return String.valueOf(c).toLowerCase().matches(vowels);
   }
   public static void main(String[] args) {
-    // System.out.println(reverseVowels("hello").length());
     System.out.println(reverseVowels("hello"));
     System.out.println(reverseVowels("Leetcode"));
     System.out.println(reverseVowels("javascript"));
